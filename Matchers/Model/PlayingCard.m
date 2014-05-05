@@ -22,6 +22,36 @@
             score = 1;
         }
     }
+    else if([otherCards count] == 2) {
+        PlayingCard *secondCard = [otherCards objectAtIndex:0];
+        PlayingCard *thirdCard = [otherCards objectAtIndex:1];
+        
+        //compaye self with second one
+        if (self.rank == secondCard.rank) {
+            score += 4;
+        } else if ([self.suit isEqualToString:secondCard.suit])
+        {
+            score +=1;
+        }
+        
+        //compaye self with third one
+        if (self.rank == thirdCard.rank) {
+            score += 4;
+        } else if ([self.suit isEqualToString:thirdCard.suit])
+        {
+            score +=1;
+        }
+        
+        
+        //compaye second with third one
+        if (secondCard.rank == thirdCard.rank) {
+            score += 4;
+        } else if ([secondCard.suit isEqualToString:thirdCard.suit])
+        {
+            score +=1;
+        }
+        
+    }
     return score;
 }
 

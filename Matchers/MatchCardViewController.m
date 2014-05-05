@@ -8,7 +8,6 @@
 
 #import "MatchCardViewController.h"
 #import "PlayingCardDeck.h"
-#import "PlayingCard.h"
 #import "CardMatchingGame.h"
 
 @interface MatchCardViewController ()
@@ -19,8 +18,11 @@
 
 @property (weak, nonatomic) IBOutlet UISwitch *threeCardsModel;
 
-@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
+@property (weak, nonatomic) IBOutlet UILabel *currentReulstLable;
 
+@property (nonatomic) NSString *currentResult;
+
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @end
 
 
@@ -30,31 +32,29 @@
 {
     if (!_game) {
         _game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count]
-                                          usingDeck:[[PlayingCardDeck alloc] init]];
+                                          usingDeck:[self createDeck]];
     }
     return _game;
 }
 
-- (Deck *)deck
+//abstract
+- (Deck*)createDeck
 {
-    if (!_deck) {
-       _deck =  [[PlayingCardDeck alloc] init ];
-    }
-    return _deck;
+    return nil;
 }
-
 
 - (IBAction)touchCardButton:(UIButton *)sender {
     int chosenButtonIndex = [self.cardButtons indexOfObject:sender];
     if (![self.threeCardsModel isOn]) {
-        [self.game chooseCardAtIndex:chosenButtonIndex threeCardOn:NO];
+        self.currentResult = [self.game chooseCardAtIndex:chosenButtonIndex threeCardOn:NO];
         [self upDateUI];
     }
     else{
-        [self.game chooseCardAtIndex:chosenButtonIndex threeCardOn:YES];
+        self.currentResult = [self.game chooseCardAtIndex:chosenButtonIndex threeCardOn:YES];
         [self upDateUI];
-        NSLog(@"You are in the 3 cards model. Still under construction!!!!");
+        //NSLog(@"You are in the 3 cards model. Still under construction!!!!");
     }
+    self.currentReulstLable.text = self.currentResult;
 }
 
 - (void)upDateUI
@@ -67,6 +67,7 @@
         cardButton.enabled = !card.isMatched;
         self.scoreLable.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
     }
+    
 }
 - (IBAction)restartButton:(UIButton *)sender {
     self.game = nil; //re-init game Model

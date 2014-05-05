@@ -16,7 +16,7 @@
 
 - (instancetype)initWithCardCount: (NSUInteger)count
                         usingDeck:(Deck *)deck;
-- (void)chooseCardAtIndex:(NSUInteger)index
+- (NSString *)chooseCardAtIndex:(NSUInteger)index
               threeCardOn:(BOOL)onff;
 - (Card *)cardAtIndex:(NSUInteger)index;
 

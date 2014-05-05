@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Deck.h"
 @interface MatchCardViewController : UIViewController
+
+//protected, abstract, need implement in subclass
+
+- (Deck*)createDeck;
 
 @end
