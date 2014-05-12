@@ -113,7 +113,7 @@ static const int COST_TO_CHOOSE = 1;
                 else {
                     [self.choseCards addObject:card];
                     card.chosen = YES;
-                    self.currentResult = [NSString stringWithFormat:@"%@",card.contents];
+                    self.currentResult = [NSString stringWithFormat:@"%@ is chosen",card.contents];
                 }
                 self.score -= COST_TO_CHOOSE;
             }

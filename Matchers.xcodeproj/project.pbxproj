@@ -10,6 +10,7 @@
 		9002C91A19146D21000320AD /* PlayingMatchCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9002C91919146D21000320AD /* PlayingMatchCardViewController.m */; };
 		9002C91D19147027000320AD /* SetGameCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 9002C91C19147027000320AD /* SetGameCard.m */; };
 		9002C92319147F45000320AD /* SetGameMatchCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9002C92219147F45000320AD /* SetGameMatchCardViewController.m */; };
+		9060C948191EF221009ABC49 /* HistroyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9060C947191EF221009ABC49 /* HistroyViewController.m */; };
 		907CC09C19170F4E009A92B5 /* SetGameCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 907CC09B19170F4E009A92B5 /* SetGameCardDeck.m */; };
 		907CC09F19171278009A92B5 /* SetGameCardGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 907CC09E19171278009A92B5 /* SetGameCardGame.m */; };
 		90C9FEE4190489590037679F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C9FEE3190489590037679F /* Foundation.framework */; };
@@ -50,6 +51,8 @@
 		9002C91C19147027000320AD /* SetGameCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetGameCard.m; path = Model/SetGameCard.m; sourceTree = "<group>"; };
 		9002C92119147F45000320AD /* SetGameMatchCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetGameMatchCardViewController.h; sourceTree = "<group>"; };
 		9002C92219147F45000320AD /* SetGameMatchCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetGameMatchCardViewController.m; sourceTree = "<group>"; };
+		9060C946191EF221009ABC49 /* HistroyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistroyViewController.h; sourceTree = "<group>"; };
+		9060C947191EF221009ABC49 /* HistroyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistroyViewController.m; sourceTree = "<group>"; };
 		907CC09A19170F4E009A92B5 /* SetGameCardDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SetGameCardDeck.h; path = Model/SetGameCardDeck.h; sourceTree = "<group>"; };
 		907CC09B19170F4E009A92B5 /* SetGameCardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetGameCardDeck.m; path = Model/SetGameCardDeck.m; sourceTree = "<group>"; };
 		907CC09D19171278009A92B5 /* SetGameCardGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SetGameCardGame.h; path = Model/SetGameCardGame.h; sourceTree = "<group>"; };
@@ -149,6 +152,8 @@
 				9002C91919146D21000320AD /* PlayingMatchCardViewController.m */,
 				90C9FEF8190489590037679F /* MatchCardViewController.h */,
 				90C9FEF9190489590037679F /* MatchCardViewController.m */,
+				9060C946191EF221009ABC49 /* HistroyViewController.h */,
+				9060C947191EF221009ABC49 /* HistroyViewController.m */,
 				90C9FEFB190489590037679F /* Images.xcassets */,
 				90C9FEEA190489590037679F /* Supporting Files */,
 				90C9FF1B190489AA0037679F /* Model */,
@@ -321,6 +326,7 @@
 				90C9FEFA190489590037679F /* MatchCardViewController.m in Sources */,
 				90C9FF1A1904899A0037679F /* Card.m in Sources */,
 				907CC09C19170F4E009A92B5 /* SetGameCardDeck.m in Sources */,
+				9060C948191EF221009ABC49 /* HistroyViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,7 @@
 #import "MatchCardViewController.h"
 #import "PlayingCardDeck.h"
 #import "CardMatchingGame.h"
+#import "HistroyViewController.h"
 
 @interface MatchCardViewController ()
 
@@ -22,11 +23,32 @@
 
 @property (nonatomic) NSString *currentResult;
 
+@property (nonatomic) NSMutableString *history;
+
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @end
 
 
 @implementation MatchCardViewController
+
+- (NSMutableString *)history
+{
+    if (!_history) {
+        _history = [[NSMutableString alloc] init];
+    }
+    return _history;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"matchGameHis"]) {
+        if ([segue.destinationViewController isKindOfClass:[HistroyViewController class]]) {
+            HistroyViewController *tsvs = (HistroyViewController*)segue.destinationViewController;
+            tsvs.history = self.history;
+        }
+    }
+    
+}
 
 - (CardMatchingGame *)game
 {
@@ -55,6 +77,8 @@
         //NSLog(@"You are in the 3 cards model. Still under construction!!!!");
     }
     self.currentReulstLable.text = self.currentResult;
+    [self.history appendFormat:@"%@\n",self.currentResult];
+    NSLog(@"History: %@",self.history);
 }
 
 - (void)upDateUI

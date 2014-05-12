@@ -19,6 +19,8 @@
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 
+@property (weak, nonatomic) IBOutlet UILabel *setGameScore;
+
 @end
 
 @implementation SetGameMatchCardViewController
@@ -68,10 +70,13 @@
         {
             [cardButton.layer setBorderWidth:0];
         }
-        
         cardButton.enabled = !card.isMatched;
     }
-    
+    self.setGameScore.text = [NSString stringWithFormat:@"Score: %d",self.game.score];
+}
+- (IBAction)refreshCard {
+    self.game = nil;
+    [self upDateUI];
 }
 
 - (IBAction)touchCard:(UIButton *)sender {

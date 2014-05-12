@@ -7,13 +7,14 @@
 //
 
 #import "SetGameCardGame.h"
+#import "SetGameCard.h"
 
 @interface SetGameCardGame()
 
 @property (nonatomic,readwrite) NSInteger score;
 @property (nonatomic,strong) NSMutableArray *cards;
 @property (nonatomic,strong) NSMutableArray *choseCards; //of Cards
-@property (nonatomic) NSString *currentResult;
+@property (nonatomic) NSAttributedString *currentResult;
 
 @end
 
@@ -60,12 +61,13 @@
 
 - (NSString *)chooseCardAtIndex:(NSUInteger)index
 {
-    self.currentResult = @"";
-    Card *card = [self cardAtIndex:index];
+    SetGameCard *card = [self cardAtIndex:index];
     if (!card.isMatched) {
         if (card.isChosen) {
             card.chosen = NO;
             [self.choseCards removeObject:card];
+            self.currentResult = [card getSetCardContent];//conment???
+            
         } else {
             card.chosen = YES;
             if([self.choseCards count] == 2)
@@ -75,13 +77,14 @@
                 Card* element_1 = self.choseCards[1];
                 
                 if (matchScore) {
-                    //if match ...
+                    //if match
                     card.chosen = YES;
                     
                     card.matched = YES;
                     element_0.matched = YES;
                     element_1.matched = YES;
                     [self.choseCards removeAllObjects];
+                    self.score += 4;
                     
                 } else {
                     //if not match ...
@@ -89,9 +92,8 @@
                     element_0.chosen = NO;
                     element_1.chosen = NO;
                     [self.choseCards removeAllObjects];
-                    
+                    self.score -= 1;
                 }
-                // match
             } else {
                 [self.choseCards addObject:card];
             }
@@ -99,8 +101,5 @@
     }
     return self.currentResult;
 }
-
-
-
 
 @end
