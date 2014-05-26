@@ -13,6 +13,9 @@
 		9060C948191EF221009ABC49 /* HistroyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9060C947191EF221009ABC49 /* HistroyViewController.m */; };
 		907CC09C19170F4E009A92B5 /* SetGameCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 907CC09B19170F4E009A92B5 /* SetGameCardDeck.m */; };
 		907CC09F19171278009A92B5 /* SetGameCardGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 907CC09E19171278009A92B5 /* SetGameCardGame.m */; };
+		909EE8CC1930F6D6009E2452 /* PlayingMatchingCardGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 909EE8CB1930F6D6009E2452 /* PlayingMatchingCardGame.m */; };
+		909EE8CF1930F939009E2452 /* PlayingCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 909EE8CE1930F939009E2452 /* PlayingCardView.m */; };
+		909EE8D61930FE95009E2452 /* MatchGameBoundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 909EE8D51930FE95009E2452 /* MatchGameBoundView.m */; };
 		90C9FEE4190489590037679F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C9FEE3190489590037679F /* Foundation.framework */; };
 		90C9FEE6190489590037679F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C9FEE5190489590037679F /* CoreGraphics.framework */; };
 		90C9FEE8190489590037679F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90C9FEE7190489590037679F /* UIKit.framework */; };
@@ -57,6 +60,12 @@
 		907CC09B19170F4E009A92B5 /* SetGameCardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetGameCardDeck.m; path = Model/SetGameCardDeck.m; sourceTree = "<group>"; };
 		907CC09D19171278009A92B5 /* SetGameCardGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SetGameCardGame.h; path = Model/SetGameCardGame.h; sourceTree = "<group>"; };
 		907CC09E19171278009A92B5 /* SetGameCardGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetGameCardGame.m; path = Model/SetGameCardGame.m; sourceTree = "<group>"; };
+		909EE8CA1930F6D6009E2452 /* PlayingMatchingCardGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayingMatchingCardGame.h; path = Model/PlayingMatchingCardGame.h; sourceTree = "<group>"; };
+		909EE8CB1930F6D6009E2452 /* PlayingMatchingCardGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayingMatchingCardGame.m; path = Model/PlayingMatchingCardGame.m; sourceTree = "<group>"; };
+		909EE8CD1930F939009E2452 /* PlayingCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayingCardView.h; sourceTree = "<group>"; };
+		909EE8CE1930F939009E2452 /* PlayingCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayingCardView.m; sourceTree = "<group>"; };
+		909EE8D41930FE95009E2452 /* MatchGameBoundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MatchGameBoundView.h; path = View/MatchGameBoundView.h; sourceTree = "<group>"; };
+		909EE8D51930FE95009E2452 /* MatchGameBoundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MatchGameBoundView.m; path = View/MatchGameBoundView.m; sourceTree = "<group>"; };
 		90C9FEE0190489590037679F /* Matchers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Matchers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90C9FEE3190489590037679F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		90C9FEE5190489590037679F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -112,6 +121,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		909EE8D01930FE08009E2452 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				909EE8CD1930F939009E2452 /* PlayingCardView.h */,
+				909EE8CE1930F939009E2452 /* PlayingCardView.m */,
+				909EE8D41930FE95009E2452 /* MatchGameBoundView.h */,
+				909EE8D51930FE95009E2452 /* MatchGameBoundView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		90C9FED7190489590037679F = {
 			isa = PBXGroup;
 			children = (
@@ -155,8 +175,9 @@
 				9060C946191EF221009ABC49 /* HistroyViewController.h */,
 				9060C947191EF221009ABC49 /* HistroyViewController.m */,
 				90C9FEFB190489590037679F /* Images.xcassets */,
-				90C9FEEA190489590037679F /* Supporting Files */,
+				909EE8D01930FE08009E2452 /* View */,
 				90C9FF1B190489AA0037679F /* Model */,
+				90C9FEEA190489590037679F /* Supporting Files */,
 			);
 			path = Matchers;
 			sourceTree = "<group>";
@@ -211,6 +232,8 @@
 				907CC09B19170F4E009A92B5 /* SetGameCardDeck.m */,
 				907CC09D19171278009A92B5 /* SetGameCardGame.h */,
 				907CC09E19171278009A92B5 /* SetGameCardGame.m */,
+				909EE8CA1930F6D6009E2452 /* PlayingMatchingCardGame.h */,
+				909EE8CB1930F6D6009E2452 /* PlayingMatchingCardGame.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -318,7 +341,9 @@
 				90C9FEF4190489590037679F /* MatchCardAppDelegate.m in Sources */,
 				9002C92319147F45000320AD /* SetGameMatchCardViewController.m in Sources */,
 				9002C91A19146D21000320AD /* PlayingMatchCardViewController.m in Sources */,
+				909EE8CF1930F939009E2452 /* PlayingCardView.m in Sources */,
 				90C9FEF0190489590037679F /* main.m in Sources */,
+				909EE8D61930FE95009E2452 /* MatchGameBoundView.m in Sources */,
 				907CC09F19171278009A92B5 /* SetGameCardGame.m in Sources */,
 				90C9FF27190866AE0037679F /* CardMatchingGame.m in Sources */,
 				9002C91D19147027000320AD /* SetGameCard.m in Sources */,
@@ -327,6 +352,7 @@
 				90C9FF1A1904899A0037679F /* Card.m in Sources */,
 				907CC09C19170F4E009A92B5 /* SetGameCardDeck.m in Sources */,
 				9060C948191EF221009ABC49 /* HistroyViewController.m in Sources */,
+				909EE8CC1930F6D6009E2452 /* PlayingMatchingCardGame.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
