@@ -141,9 +141,30 @@ API of your abstract super class effectively enough.
 
 9. Note that the third kind of “filling” in a Set card is striping, not shading.
 
-10. asd a dsa 
+10. It is not a Required Task to remove unused code (e.g. attributed string code, historydisplaying
+code, etc.), but it is generally recommended to do so.
 
+11. There are numerous ways to animate the coming and goings of cards. Creativity
+will be rewarded! On the other hand, be sure to check the updated Evaluation
+criteria this week (i.e. animation quality is part of it).
 
- 
+12. The animation of re-deal should make it clear to the user that the current cards are
+being discarded and new ones being dealt. For example, just flipping the cards that
+are face up back down would be insufficient (that might just look like you are letting
+them start the same game again with the same set of cards).
 
+13. If you have game-specific animation (i.e. specific to the Playing Card game or to the
+Set game), you can still put most of your code in your abstract superclass. For
+example, if your subclass will be doing some animation, it can either let the
+superclass know how long it is going to take or call the superclass back when the
+animation is done or the superclass can simply wait for dynamic animation to settle
+back down (if the subclass is only using dynamic animation).
 
+14. The “animation in response to device rotation” Required Task might well take
+exactly zero extra code. If you’ve implemented the rest of the Required Tasks in a
+generic way (i.e. your UI is always appropriate to its bounds and any time your UI
+changes anything, it animates that change) this should come for free.
+
+15. When you are implementing the pinching of the cards, remember that an
+attachment behavior’s length and anchorPoint can be modified at any time and the
+animation will instantly adapt.
