@@ -140,19 +140,15 @@ writing tons of code in these concrete subclasses, then you may not be designing
 API of your abstract super class effectively enough.
 
 9. Note that the third kind of “filling” in a Set card is striping, not shading.
-
 10.It is not a Required Task to remove unused code (e.g. attributed string code, historydisplaying
 code, etc.), but it is generally recommended to do so.
-
 11.There are numerous ways to animate the coming and goings of cards. Creativity
 will be rewarded! On the other hand, be sure to check the updated Evaluation
 criteria this week (i.e. animation quality is part of it).
-
 12.The animation of re-deal should make it clear to the user that the current cards are
 being discarded and new ones being dealt. For example, just flipping the cards that
 are face up back down would be insufficient (that might just look like you are letting
 them start the same game again with the same set of cards).
-
 13.If you have game-specific animation (i.e. specific to the Playing Card game or to the
 Set game), you can still put most of your code in your abstract superclass. For
 example, if your subclass will be doing some animation, it can either let the
