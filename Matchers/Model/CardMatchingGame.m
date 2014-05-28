@@ -31,6 +31,11 @@
     return _choseCards;
 }
 
+- (NSUInteger)number0fCards
+{
+    return [self.cards count];
+}
+
 
 - (instancetype)initWithCardCount: (NSUInteger)count
                         usingDeck:(Deck *)deck
@@ -69,34 +74,35 @@ static const int COST_TO_CHOOSE = 1;
     self.currentResult = @"";
     
     // 2 cards model logic
-        if (!card.isMatched) {
-            if (card.isChosen) {
-                card.chosen = NO;
-                self.currentResult = [NSString stringWithFormat:@"%@ is not Chosen",card.contents];
-            } else {
-                for (Card *otherCard in self.cards) {
-                    if (otherCard.isChosen && !otherCard.isMatched) {
-                        int matchScore = [card match:@[otherCard]];
-                        if (matchScore) {
-                            self.score += matchScore * MATCH_BONUS;
-                            otherCard.matched = YES;
-                            card.matched = YES;
-                            self.currentResult = [NSString stringWithFormat:@"Matched %@ %@ for %d Points",card.contents, otherCard.contents,matchScore];
-                        } else {
-                            self.score -= MISMATCH_PENATY;
-                            otherCard.chosen = NO;
-                            self.currentResult = [NSString stringWithFormat:@"%@ %@ don't matched!%d Points penalty",card.contents, otherCard.contents, MISMATCH_PENATY];
-                        }
-                        break; // can only choose 2 cars for now
+    if (!card.isMatched) {
+        if (card.isChosen) {
+            card.chosen = NO;
+            self.currentResult = [NSString stringWithFormat:@"%@ is not Chosen",card.contents];
+        } else {
+            for (Card *otherCard in self.cards) {
+                if (otherCard.isChosen && !otherCard.isMatched) {
+                    int matchScore = [card match:@[otherCard]];
+                    if (matchScore) {
+                        self.score += matchScore * MATCH_BONUS;
+                        otherCard.matched = YES;
+                        card.matched = YES;
+                        self.currentResult = [NSString stringWithFormat:@"Matched %@ %@ for %d Points",card.contents, otherCard.contents,matchScore];
+                    } else {
+                        self.score -= MISMATCH_PENATY;
+                        card.chosen = NO;
+                        otherCard.chosen = NO;
+                        self.currentResult = [NSString stringWithFormat:@"%@ %@ don't matched!%d Points penalty",card.contents, otherCard.contents, MISMATCH_PENATY];
                     }
+                    break; // can only choose 2 cars for now
                 }
-                self.score -= COST_TO_CHOOSE;
-                if (![self.currentResult length]) {
-                    self.currentResult = [NSString stringWithFormat:@"%@ is chosen",card.contents];
-                }
-                card.chosen = YES;
             }
+            self.score -= COST_TO_CHOOSE;
+            if (![self.currentResult length]) {
+                self.currentResult = [NSString stringWithFormat:@"%@ is chosen",card.contents];
+            }
+            card.chosen = YES;//
         }
+    }
     
     return self.currentResult; //return the result of the current touch.
 }

@@ -13,6 +13,7 @@
 		9060C948191EF221009ABC49 /* HistroyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9060C947191EF221009ABC49 /* HistroyViewController.m */; };
 		907CC09C19170F4E009A92B5 /* SetGameCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 907CC09B19170F4E009A92B5 /* SetGameCardDeck.m */; };
 		907CC09F19171278009A92B5 /* SetGameCardGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 907CC09E19171278009A92B5 /* SetGameCardGame.m */; };
+		9090D86119350F5E00056C8F /* SetCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9090D86019350F5E00056C8F /* SetCardView.m */; };
 		909EE8CC1930F6D6009E2452 /* PlayingMatchingCardGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 909EE8CB1930F6D6009E2452 /* PlayingMatchingCardGame.m */; };
 		909EE8CF1930F939009E2452 /* PlayingCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 909EE8CE1930F939009E2452 /* PlayingCardView.m */; };
 		909EE8D61930FE95009E2452 /* MatchGameBoundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 909EE8D51930FE95009E2452 /* MatchGameBoundView.m */; };
@@ -60,6 +61,8 @@
 		907CC09B19170F4E009A92B5 /* SetGameCardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetGameCardDeck.m; path = Model/SetGameCardDeck.m; sourceTree = "<group>"; };
 		907CC09D19171278009A92B5 /* SetGameCardGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SetGameCardGame.h; path = Model/SetGameCardGame.h; sourceTree = "<group>"; };
 		907CC09E19171278009A92B5 /* SetGameCardGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetGameCardGame.m; path = Model/SetGameCardGame.m; sourceTree = "<group>"; };
+		9090D85F19350F5E00056C8F /* SetCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetCardView.h; sourceTree = "<group>"; };
+		9090D86019350F5E00056C8F /* SetCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetCardView.m; sourceTree = "<group>"; };
 		909EE8CA1930F6D6009E2452 /* PlayingMatchingCardGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayingMatchingCardGame.h; path = Model/PlayingMatchingCardGame.h; sourceTree = "<group>"; };
 		909EE8CB1930F6D6009E2452 /* PlayingMatchingCardGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayingMatchingCardGame.m; path = Model/PlayingMatchingCardGame.m; sourceTree = "<group>"; };
 		909EE8CD1930F939009E2452 /* PlayingCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayingCardView.h; sourceTree = "<group>"; };
@@ -124,6 +127,8 @@
 		909EE8D01930FE08009E2452 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9090D85F19350F5E00056C8F /* SetCardView.h */,
+				9090D86019350F5E00056C8F /* SetCardView.m */,
 				909EE8CD1930F939009E2452 /* PlayingCardView.h */,
 				909EE8CE1930F939009E2452 /* PlayingCardView.m */,
 				909EE8D41930FE95009E2452 /* MatchGameBoundView.h */,
@@ -283,7 +288,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = MatchCard;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = oit;
 				TargetAttributes = {
 					90C9FF00190489590037679F = {
@@ -345,6 +350,7 @@
 				90C9FEF0190489590037679F /* main.m in Sources */,
 				909EE8D61930FE95009E2452 /* MatchGameBoundView.m in Sources */,
 				907CC09F19171278009A92B5 /* SetGameCardGame.m in Sources */,
+				9090D86119350F5E00056C8F /* SetCardView.m in Sources */,
 				90C9FF27190866AE0037679F /* CardMatchingGame.m in Sources */,
 				9002C91D19147027000320AD /* SetGameCard.m in Sources */,
 				90C9FF24190493110037679F /* PlayingCardDeck.m in Sources */,
@@ -406,7 +412,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -445,7 +450,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -503,7 +507,6 @@
 		90C9FF161904895A0037679F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Matchers.app/Matchers";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -526,7 +529,6 @@
 		90C9FF171904895A0037679F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Matchers.app/Matchers";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

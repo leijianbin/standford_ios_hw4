@@ -83,40 +83,16 @@
 //    }
 //    
 //}
-//- (IBAction)restartButton:(UIButton *)sender {
-//    self.game = nil; //re-init game Model
-//    [self upDateUI]; //update the Game UI
-//}
-
 - (NSString *)titleForCard:(Card *)card
 {
     return card.isChosen ? card.contents: @"";
 }
 
-//- (IBAction)modelSwitch:(UISwitch *)sender {
-//    
-//    if ([sender isOn])
-//    {
-//        NSLog(@"On");
-//        NSLog(@"Switch to 3 Card Modle, please wait to restart!");
-//         self.game = nil;
-//         [self upDateUI];
-//    }
-//    else
-//    {
-//        NSLog(@"Off");
-//        NSLog(@"Switch to 2 Card Modle, please wait to restart!");
-//        self.game = nil;
-//        [self upDateUI];
-//    }
-//
-//}
 
 - (UIImage *)backgroundImageForCard:(Card *)card
 {
     return [UIImage imageNamed:card.isChosen ? @"cardfront" : @"cardback"];
 }
-
 
 
 @end
